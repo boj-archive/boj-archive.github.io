@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BOJ Archive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="site-header">
+        <a href="./">BOJ Archive</a>
+    </nav>
+    <main>
+        <h1>BOJ Archive</h1>
+        <p>Archived problem statements from <a href="https://www.acmicpc.net/">Baekjoon Online Judge</a>, preserved before the site's shutdown.</p>
+        <form id="go-form" style="display:flex;gap:0.5rem;margin:1.5rem 0">
+            <input id="pid-input" type="number" placeholder="Problem ID (e.g. 34680)"
+                   style="font-size:1rem;padding:0.4em 0.6em;border:1px solid var(--border);border-radius:4px;width:16em">
+            <button type="submit"
+                    style="font-size:1rem;padding:0.4em 1em;border:1px solid var(--accent);border-radius:4px;background:var(--accent);color:#fff;cursor:pointer">
+                View
+            </button>
+        </form>
+    </main>
+    <script>
+        document.getElementById("go-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var pid = document.getElementById("pid-input").value.trim();
+            if (pid) location.href = "problem.html?id=" + pid;
+        });
+    </script>
+</body>
+</html>
