@@ -222,27 +222,35 @@ td.bg-orange, th.bg-orange { background-color: #ff9800; color: #fff; }
 td[class^="bg-"], th[class^="bg-"] { font-weight: 600; }
 
 /* ── Extra sections (subtask, scoring, attachment, source, judge-info) ── */
-section[data-kind="subtask"]::before    { content: none; }
-section[data-kind="subtask"] h3         { font-size: 1rem; font-weight: 700; margin: 1.2rem 0 0.4rem; }
+section[data-kind="subtask"]::before                { content: "서브태스크"; }
+section[data-kind="subtask"][data-index]::before    { content: none; }
+section[data-kind="subtask"][data-index] h3         { font-size: 1rem; font-weight: 700; margin: 1.2rem 0 0.4rem; }
 section[data-kind="scoring"]::before    { content: "채점"; }
 section[data-kind="attachment"]::before { content: "첨부"; }
 section[data-kind="source"]::before     { content: "출처"; }
 section[data-kind="judge-info"]::before { content: "채점 및 기타 정보"; }
 
+article[data-display-lang="en"] section[data-kind="subtask"]::before    { content: "Subtask"; }
 article[data-display-lang="en"] section[data-kind="scoring"]::before    { content: "Scoring"; }
 article[data-display-lang="en"] section[data-kind="attachment"]::before { content: "Attachments"; }
 article[data-display-lang="en"] section[data-kind="source"]::before     { content: "Source"; }
 article[data-display-lang="en"] section[data-kind="judge-info"]::before { content: "Judge Info"; }
 
+article[data-display-lang="ja"] section[data-kind="subtask"]::before    { content: "サブタスク"; }
 article[data-display-lang="ja"] section[data-kind="scoring"]::before    { content: "採点"; }
 article[data-display-lang="ja"] section[data-kind="attachment"]::before { content: "添付"; }
 article[data-display-lang="ja"] section[data-kind="source"]::before     { content: "出典"; }
 article[data-display-lang="ja"] section[data-kind="judge-info"]::before { content: "ジャッジ情報"; }
 
+article[data-display-lang="pl"] section[data-kind="subtask"]::before    { content: "Podzadania"; }
 article[data-display-lang="pl"] section[data-kind="scoring"]::before    { content: "Punktacja"; }
 article[data-display-lang="pl"] section[data-kind="attachment"]::before { content: "Załączniki"; }
 article[data-display-lang="pl"] section[data-kind="source"]::before     { content: "Źródło"; }
 article[data-display-lang="pl"] section[data-kind="judge-info"]::before { content: "Informacje o ocenianiu"; }
+
+section[data-kind="custom"]::before { content: none; }
+section[data-kind="custom"] h3 { font-size: 1rem; font-weight: 700; margin: 1.8rem 0 0.6rem; }
+div[data-kind="sample-explain"] { font-size: 0.9rem; margin: 0.4em 0 0.8em; color: var(--muted); }
 
 section[data-kind="source"] { font-size: 0.9rem; color: var(--muted); }
 section[data-kind="judge-info"] { font-size: 0.9rem; }
